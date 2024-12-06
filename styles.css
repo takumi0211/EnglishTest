@@ -261,8 +261,9 @@ h1 {
     min-height: 45px;
     border-radius: 10px;
     border: none;
-    background: #3498db;
-    color: white;
+    background: #f8f9fa;
+    color: #2c3e50;
+    border: 2px solid #e9ecef;
     cursor: pointer;
     transition: all 0.2s ease;
     -webkit-appearance: none;
@@ -270,12 +271,18 @@ h1 {
 
 .retry-btn:active {
     transform: scale(0.98);
-    opacity: 0.9;
+    background: #e9ecef;
 }
 
 #retry-missed {
     background: #e74c3c;
+    color: white;
+    border: none;
     margin-bottom: 1rem;
+}
+
+#retry-missed:active {
+    background: #c0392b;
 }
 
 /* スマートフォン向けの追加調整 */
@@ -408,7 +415,7 @@ body {
     -webkit-appearance: none;
 }
 
-/* ホーム画面の単語数選択ボタン */
+/* ホーム画���の単語数選択ボタン */
 .word-count-btn {
     width: 100%;
     padding: 1.5rem;
