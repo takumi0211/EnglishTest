@@ -197,65 +197,135 @@ h1 {
     }
 }
 
-/* 結果画面のスタイル */
+/* 結果画面のスタイル改善 */
 .result-summary {
     text-align: center;
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    margin: 1rem 0 1.5rem;
     color: #2c3e50;
 }
 
+.missed-words {
+    margin-bottom: 1.5rem;
+}
+
+.missed-words h3 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
 .missed-words-list {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .missed-word-item {
-    padding: 0.8rem 1.2rem;
+    padding: 0.8rem 1rem;
     border: 1px solid #e9ecef;
-    border-radius: 12px;
+    border-radius: 10px;
     margin-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 50px;
+    min-height: 45px;
+    background: #f8f9fa;
 }
 
 .missed-word-item .word {
-    font-weight: bold;
+    font-weight: 600;
     color: #e74c3c;
+    font-size: 1rem;
 }
 
 .missed-word-item .meaning {
     color: #2c3e50;
+    font-size: 0.95rem;
+    text-align: right;
+    margin-left: 1rem;
 }
 
 .perfect-score {
     text-align: center;
     color: #27ae60;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin: 2rem 0;
+    font-weight: 500;
 }
 
 .retry-btn {
     width: 100%;
     padding: 0.8rem;
     margin: 0.5rem 0;
-    font-size: 1.2rem;
-    min-height: 50px;
-    border-radius: 12px;
+    font-size: 1.1rem;
+    min-height: 45px;
+    border-radius: 10px;
+    border: none;
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
     -webkit-appearance: none;
 }
 
-.retry-btn:hover {
-    background: #2980b9;
+.retry-btn:active {
+    transform: scale(0.98);
+    opacity: 0.9;
 }
 
 #retry-missed {
     background: #e74c3c;
+    margin-bottom: 1rem;
 }
 
-#retry-missed:hover {
-    background: #c0392b;
+/* スマートフォン向けの追加調整 */
+@media screen and (max-width: 428px) {
+    .result-summary {
+        font-size: 1.1rem;
+        margin: 0.8rem 0 1.2rem;
+    }
+
+    .missed-word-item {
+        padding: 0.7rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .missed-word-item .word {
+        font-size: 0.95rem;
+    }
+
+    .missed-word-item .meaning {
+        font-size: 0.9rem;
+    }
+
+    .retry-btn {
+        padding: 0.7rem;
+        font-size: 1rem;
+        min-height: 42px;
+    }
+
+    .perfect-score {
+        font-size: 1rem;
+        margin: 1.5rem 0;
+    }
+}
+
+/* 長い単語や意味のための対応 */
+@media screen and (max-width: 360px) {
+    .missed-word-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.8rem;
+    }
+
+    .missed-word-item .word {
+        margin-bottom: 0.3rem;
+    }
+
+    .missed-word-item .meaning {
+        margin-left: 0;
+        text-align: left;
+    }
 }
 
 /* タイムバーのスタイル */
