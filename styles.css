@@ -30,21 +30,21 @@ h1 {
 
 .quiz-container {
     background: white;
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .word-display {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .word-display p {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #34495e;
     font-weight: bold;
-    margin: 1rem 0;
+    margin: 0.5rem 0;
 }
 
 .choices-container {
@@ -55,17 +55,17 @@ h1 {
 
 .choice-btn {
     width: 100%;
-    padding: 1.2rem;
-    margin-bottom: 0.8rem;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0.5rem;
     background: #f8f9fa;
     border: 2px solid #e9ecef;
     border-radius: 12px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
     text-align: left;
     color: #2c3e50;
-    min-height: 60px;
+    min-height: 50px;
     -webkit-appearance: none;
 }
 
@@ -100,53 +100,101 @@ h1 {
 .progress {
     display: flex;
     justify-content: space-between;
-    margin-top: 1.2rem;
+    margin-top: 0.8rem;
     color: #7f8c8d;
     font-size: 1.1rem;
 }
 
-/* ホーム画面のスタイル */
+/* ホーム画面のスタイル改善 */
 .home-screen {
     text-align: center;
-    padding: 2rem;
+    padding: 0.8rem;
 }
 
 .home-screen h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #2c3e50;
-    font-weight: 300;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.3;
 }
 
 .word-count-options {
     display: grid;
-    gap: 1rem;
-    margin-bottom: 2rem;
+    grid-template-columns: repeat(2, 1fr); /* 2列のグリッドに変更 */
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 0 0.5rem;
 }
 
 .word-count-btn {
     width: 100%;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-    background: #f8f9fa;
+    padding: 1rem 0.5rem;
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    background: white;
     border: 2px solid #e9ecef;
-    border-radius: 12px;
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s ease;
     color: #2c3e50;
-    min-height: 70px;
-    -webkit-appearance: none;
+    min-height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
 }
 
-.word-count-btn:hover {
-    background: #e9ecef;
-    transform: translateY(-2px);
+.word-count-btn:active {
+    background: #f8f9fa;
+    transform: scale(0.98);
+}
+
+.word-count-btn span {
+    display: block;
+}
+
+.word-count-btn .count {
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #3498db;
+    margin-bottom: 0.2rem;
+}
+
+.word-count-btn .label {
+    font-size: 0.9rem;
+    color: #7f8c8d;
 }
 
 .total-words {
     color: #7f8c8d;
     font-size: 0.9rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+    .word-count-btn {
+        background: #f8f9fa;
+    }
+}
+
+/* スマートフォン向けの調整 */
+@media screen and (max-width: 428px) {
+    .home-screen h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .word-count-btn {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .word-count-btn .count {
+        font-size: 1.2rem;
+    }
 }
 
 /* 結果画面のスタイル */
@@ -162,14 +210,14 @@ h1 {
 }
 
 .missed-word-item {
-    padding: 1.2rem;
+    padding: 0.8rem 1.2rem;
     border: 1px solid #e9ecef;
     border-radius: 12px;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 60px;
+    min-height: 50px;
 }
 
 .missed-word-item .word {
@@ -190,10 +238,10 @@ h1 {
 
 .retry-btn {
     width: 100%;
-    padding: 1.2rem;
-    margin: 1rem 0;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
     font-size: 1.2rem;
-    min-height: 60px;
+    min-height: 50px;
     border-radius: 12px;
     -webkit-appearance: none;
 }
@@ -216,7 +264,7 @@ h1 {
     height: 8px;
     background-color: #e9ecef;
     border-radius: 4px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     overflow: hidden;
 }
 
@@ -365,19 +413,24 @@ body {
 /* 縦向き時のスタイル */
 @media screen and (max-width: 428px) {
     .container {
-        padding: 0.8rem;
+        padding: 0.5rem;
     }
 
     .quiz-container {
-        padding: 1.2rem;
+        padding: 0.8rem;
     }
 
     .word-display p {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .choice-btn, .word-count-btn {
-        font-size: 1.1rem;
-        padding: 1rem;
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+
+    h1 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
     }
 } 
