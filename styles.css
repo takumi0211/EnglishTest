@@ -5,18 +5,20 @@
 }
 
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
     background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 600px;
-    padding: 2rem;
+    padding: 1rem;
+    margin: 0 auto;
 }
 
 h1 {
@@ -28,20 +30,21 @@ h1 {
 
 .quiz-container {
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .word-display {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .word-display p {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #34495e;
     font-weight: bold;
+    margin: 1rem 0;
 }
 
 .choices-container {
@@ -52,15 +55,18 @@ h1 {
 
 .choice-btn {
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
     background: #f8f9fa;
     border: 2px solid #e9ecef;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     text-align: left;
     color: #2c3e50;
+    min-height: 60px;
+    -webkit-appearance: none;
 }
 
 .choice-btn:hover {
@@ -94,8 +100,9 @@ h1 {
 .progress {
     display: flex;
     justify-content: space-between;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
     color: #7f8c8d;
+    font-size: 1.1rem;
 }
 
 /* ホーム画面のスタイル */
@@ -117,14 +124,18 @@ h1 {
 }
 
 .word-count-btn {
+    width: 100%;
     padding: 1.5rem;
-    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
     background: #f8f9fa;
     border: 2px solid #e9ecef;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     color: #2c3e50;
+    min-height: 70px;
+    -webkit-appearance: none;
 }
 
 .word-count-btn:hover {
@@ -151,13 +162,14 @@ h1 {
 }
 
 .missed-word-item {
-    padding: 1rem;
+    padding: 1.2rem;
     border: 1px solid #e9ecef;
-    border-radius: 8px;
-    margin-bottom: 0.5rem;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 60px;
 }
 
 .missed-word-item .word {
@@ -177,16 +189,13 @@ h1 {
 }
 
 .retry-btn {
-    display: block;
     width: 100%;
-    padding: 1rem;
+    padding: 1.2rem;
     margin: 1rem 0;
-    background: #3498db;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
+    font-size: 1.2rem;
+    min-height: 60px;
+    border-radius: 12px;
+    -webkit-appearance: none;
 }
 
 .retry-btn:hover {
@@ -204,10 +213,10 @@ h1 {
 /* タイムバーのスタイル */
 .timer-bar-container {
     width: 100%;
-    height: 6px;
+    height: 8px;
     background-color: #e9ecef;
-    border-radius: 3px;
-    margin-bottom: 2rem;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
     overflow: hidden;
 }
 
@@ -225,4 +234,150 @@ h1 {
 
 .timer-bar.danger {
     background-color: #e74c3c;
+}
+
+/* モバイル最適化のスタイルを追加・修正 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.quiz-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.word-display {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.word-display p {
+    font-size: 2.5rem;
+    color: #34495e;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+/* 選択肢ボタンのスタイル改善 */
+.choice-btn {
+    width: 100%;
+    padding: 1.2rem;
+    margin-bottom: 0.8rem;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+    color: #2c3e50;
+    min-height: 60px;
+    -webkit-appearance: none;
+}
+
+/* ホーム画面の単語数選択ボタン */
+.word-count-btn {
+    width: 100%;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #2c3e50;
+    min-height: 70px;
+    -webkit-appearance: none;
+}
+
+/* タイムバーのスタイル調整 */
+.timer-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+/* 結果表示画面の調整 */
+.missed-word-item {
+    padding: 1.2rem;
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+}
+
+.retry-btn {
+    width: 100%;
+    padding: 1.2rem;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    min-height: 60px;
+    border-radius: 12px;
+    -webkit-appearance: none;
+}
+
+/* スコアと問題数の表示を大きく */
+.progress {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.2rem;
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+/* アクティブ状態のスタイル調整 */
+.choice-btn:active, .word-count-btn:active, .retry-btn:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+}
+
+/* iPhoneのセーフエリアに対応 */
+@supports (padding: max(0px)) {
+    .container {
+        padding-left: max(1rem, env(safe-area-inset-left));
+        padding-right: max(1rem, env(safe-area-inset-right));
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+}
+
+/* 縦向き時のスタイル */
+@media screen and (max-width: 428px) {
+    .container {
+        padding: 0.8rem;
+    }
+
+    .quiz-container {
+        padding: 1.2rem;
+    }
+
+    .word-display p {
+        font-size: 2.2rem;
+    }
+
+    .choice-btn, .word-count-btn {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
 } 
